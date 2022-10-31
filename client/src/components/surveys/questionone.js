@@ -1,6 +1,7 @@
 const json = {
-  title: "Basic survey example",
-  description: "survey description",
+  title: "Welcome to a new survey!",
+  description:
+    "Please answer all questions. Any question marked with an * is required",
   completedHtml:
     "<h3>Thank you for completing the survey.</h3><h5>Frontier BPM</h5>",
   pages: [
@@ -47,6 +48,22 @@ const json = {
             "Mercedes-Benz",
             "BMW",
             "Toyota",
+          ],
+        },
+        {
+          type: "radiogroup",
+          name: "product_discovering",
+          title: "How did you first discover our product?",
+          choices: [
+            "Search engine",
+            "GitHub",
+            "Friend or colleague",
+            {
+              value: "Redit",
+              text: "Reddit",
+            },
+            "Twitter",
+            "Facebook",
           ],
         },
       ],

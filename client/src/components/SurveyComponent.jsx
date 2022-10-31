@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useCallback } from "react";
 
 import * as Survey from "survey-react";
 
@@ -46,7 +46,7 @@ class SurveyComponent extends Component {
     //Load the initial state
     loadState(survey);
 
-    return <Survey.Survey model={survey} />;
+    return <Survey.Survey showCompletedPage={false} model={survey} />;
   }
 }
 

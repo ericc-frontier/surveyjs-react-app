@@ -12,7 +12,7 @@ const json = {
           type: "rating",
           name: "nps_score",
           title:
-            "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague? (If product rec + product sat <=10 text box becomes visable",
+            "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague? (If product sat <=5 text box becomes visable",
           isRequired: true,
           rateMin: 0,
           rateMax: 10,
@@ -22,7 +22,7 @@ const json = {
         {
           type: "comment",
           name: "passive_experience",
-          visibleIf: "({nps_score} + {satisfaction}) <= 10",
+          visibleIf: "{satisfaction} <= 5",
           title: "What can we do to make this product more satisfying?",
         },
         {

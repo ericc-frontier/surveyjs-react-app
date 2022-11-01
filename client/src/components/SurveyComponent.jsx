@@ -46,7 +46,7 @@ class SurveyComponent extends Component {
     //Load the initial state
     loadState(survey);
 
-    return <Survey.Survey showCompletedPage={false} model={survey} />;
+    return <Survey.Survey model={survey} />;
   }
 }
 

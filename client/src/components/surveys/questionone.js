@@ -22,7 +22,7 @@ const json = {
         {
           type: "comment",
           name: "passive_experience",
-          visibleIf: "{satisfaction} <= 5",
+          visibleIf: "{satisfaction} < 5",
           title: "What can we do to make this product more satisfying?",
         },
         {

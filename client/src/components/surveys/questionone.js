@@ -89,6 +89,23 @@ const json = {
           ],
         },
         {
+          type: "radiogroup",
+          name: "eventQuestion",
+          visibleIf: "{car} notEmpty",
+          title: "Would you buy this vehicle again?",
+          isRequired: true,
+          choices: [
+            {
+              value: "yes",
+              text: "yes",
+            },
+            {
+              value: "no",
+              text: "No",
+            },
+          ],
+        },
+        {
           type: "ranking",
           name: "bestcar",
           isRequired: true,
@@ -150,7 +167,7 @@ const json = {
         {
           type: "radiogroup",
           name: "eventQuestion",
-          visibleIf: "{satisfaction} notEmpty",
+          visibleIf: "{using_duration} notEmpty",
           title: "Would you buy this service again?",
           isRequired: true,
           choices: [

@@ -37,7 +37,7 @@ const json = {
         },
         {
           type: "panel",
-          name: "panel2",
+          name: "panel",
           elements: [
             {
               type: "text",

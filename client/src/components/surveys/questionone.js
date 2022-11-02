@@ -7,75 +7,188 @@ const json = {
   pages: [
     {
       name: "page1",
+      title: "Patient Information",
       elements: [
         {
-          type: "rating",
-          name: "nps_score",
-          title:
-            "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague? (If product sat <=5 text box becomes visable",
-          isRequired: true,
-          rateMin: 0,
-          rateMax: 10,
-          minRateDescription: "(Most unlikely)",
-          maxRateDescription: "(Most likely)",
-        },
-        {
-          type: "comment",
-          name: "passive_experience",
-          visibleIf: "{satisfaction} < 5",
-          title: "What can we do to make this product more satisfying?",
-        },
-        {
-          type: "rating",
-          name: "satisfaction",
-          title: "How satisfied are you with the Product?",
-          minRateDescription: "Not Satisfied",
-          maxRateDescription: "Completely satisfied",
-        },
-        {
-          type: "checkbox",
-          name: "car",
-          title:
-            "Which is the brand of your car? (next questions renders if response is given)",
-          isRequired: true,
-          showNoneItem: true,
-          colCount: 4,
-          choices: [
-            "Ford",
-            "Volkswagen",
-            "Nissan",
-            "Audi",
-            "Mercedes-Benz",
-            "BMW",
-            "Toyota",
-          ],
-        },
-        {
-          type: "radiogroup",
-          name: "product_discovering",
-          title: "How did you first discover our product?",
-          choices: [
-            "Search engine",
-            "GitHub",
-            "Friend or colleague",
+          type: "panel",
+          name: "patienName",
+          elements: [
             {
-              value: "Redit",
-              text: "Reddit",
+              type: "text",
+              name: "patientLastName",
+              title: "(Last)",
+              isRequired: true,
             },
-            "Twitter",
-            "Facebook",
+            {
+              type: "text",
+              name: "patienFirstName",
+              startWithNewLine: false,
+              title: "(First)",
+              isRequired: true,
+            },
+            {
+              type: "text",
+              name: "patientMiddleName",
+              title: "(M.I)",
+            },
           ],
+          questionTitleLocation: "bottom",
+          title: "Patient Name",
+        },
+        {
+          type: "panel",
+          name: "panel2",
+          elements: [
+            {
+              type: "text",
+              name: "socialsecurity",
+              title: "Social Security #:",
+              isRequired: true,
+              inputFormat: "999-99-9999",
+            },
+            {
+              type: "text",
+              inputType: "date",
+              isRequired: true,
+              name: "birthDate",
+              startWithNewLine: false,
+              title: "Date of birth:",
+            },
+            {
+              type: "radiogroup",
+              choices: [
+                {
+                  value: "male",
+                  text: "Male",
+                },
+                {
+                  value: "female",
+                  text: "Female",
+                },
+              ],
+              colCount: 0,
+              isRequired: true,
+              name: "sex",
+              title: "Sex:",
+            },
+          ],
+          questionTitleLocation: "left",
+          title: "Social Security & Birth Date",
+        },
+        {
+          type: "panel",
+          name: "panel1",
+          elements: [
+            {
+              type: "radiogroup",
+              choices: [
+                {
+                  value: "patient",
+                  text: "Patient",
+                },
+                {
+                  value: "spouse",
+                  tex: "Spouse",
+                },
+              ],
+              colCount: 0,
+              showOtherItem: true,
+              isRequired: true,
+              name: "completedBy",
+              otherText: "Other (specify)",
+              title: "Who completed this form:",
+            },
+            {
+              type: "text",
+              name: "completedByOtherName",
+              visibleIf: '{completedBy} != "patient"',
+              startWithNewLine: false,
+              title: "Name (if other than patient):",
+              isRequired: true,
+            },
+            {
+              type: "signaturepad",
+              name: "signature",
+              title: "Please sign here",
+              isRequired: true,
+            },
+          ],
+          title: "Completed By",
         },
       ],
     },
+    // {
+    //   name: "page2",
+    //   title: "Demo Title for survey page 2",
+    //   elements: [
+    //     {
+    //       type: "rating",
+    //       name: "nps_score",
+    //       title:
+    //         "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague? (If product sat <=5 text box becomes visable",
+    //       isRequired: true,
+    //       rateMin: 0,
+    //       rateMax: 10,
+    //       minRateDescription: "(Most unlikely)",
+    //       maxRateDescription: "(Most likely)",
+    //     },
+    //     {
+    //       type: "comment",
+    //       name: "passive_experience",
+    //       visibleIf: "{satisfaction} < 5",
+    //       title: "What can we do to make this product more satisfying?",
+    //     },
+    //     {
+    //       type: "rating",
+    //       name: "satisfaction",
+    //       title: "How satisfied are you with the Product?",
+    //       minRateDescription: "Not Satisfied",
+    //       maxRateDescription: "Completely satisfied",
+    //     },
+    //     {
+    //       type: "checkbox",
+    //       name: "car",
+    //       title:
+    //         "Which is the brand of your car? (next questions renders if response is given)",
+    //       isRequired: true,
+    //       showNoneItem: true,
+    //       colCount: 4,
+    //       choices: [
+    //         "Ford",
+    //         "Volkswagen",
+    //         "Nissan",
+    //         "Audi",
+    //         "Mercedes-Benz",
+    //         "BMW",
+    //         "Toyota",
+    //       ],
+    //     },
+    //     {
+    //       type: "radiogroup",
+    //       name: "product_discovering",
+    //       title: "How did you first discover our product?",
+    //       choices: [
+    //         "Search engine",
+    //         "GitHub",
+    //         "Friend or colleague",
+    //         {
+    //           value: "Redit",
+    //           text: "Reddit",
+    //         },
+    //         "Twitter",
+    //         "Facebook",
+    //       ],
+    //     },
+    //   ],
+    // },
     {
-      name: "page2",
+      name: "page3",
       elements: [
         {
           type: "checkbox",
           name: "car",
           isRequired: true,
-          title: "What cars have you being drived?",
+          title: "What vehicle brands have you driven before?",
           colCount: 4,
           choicesOrder: "asc",
           choices: [
@@ -86,23 +199,6 @@ const json = {
             "Mercedes-Benz",
             "BMW",
             "Toyota",
-          ],
-        },
-        {
-          type: "radiogroup",
-          name: "eventQuestion",
-          visibleIf: "{car} notEmpty",
-          title: "Would you buy this vehicle again?",
-          isRequired: true,
-          choices: [
-            {
-              value: "yes",
-              text: "yes",
-            },
-            {
-              value: "no",
-              text: "No",
-            },
           ],
         },
         {
@@ -164,6 +260,7 @@ const json = {
             "Over 3 years",
           ],
         },
+
         {
           type: "radiogroup",
           name: "eventQuestion",
@@ -313,7 +410,7 @@ const json = {
       ],
     },
   ],
-  questionsOrder: "random",
+  // questionsOrder: "random",
   showProgressBar: "bottom",
 };
 

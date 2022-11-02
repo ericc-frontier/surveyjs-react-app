@@ -104,7 +104,6 @@ const json = {
               visibleIf: '{completedBy} != "patient"',
               startWithNewLine: false,
               title: "Name (if other than patient):",
-              isRequired: true,
             },
             {
               type: "signaturepad",

@@ -23,16 +23,16 @@ function SurveyComponent() {
     if (res.currentPageNo) survey.currentPageNo = res.currentPageNo;
     if (res.data) survey.data = res.data;
   }
-  function saveState(survey) {
-    var res = { currentPageNo: survey.currentPageNo, data: survey.data };
-    //Here should be the code to save the data into your database
-    window.localStorage.setItem(storageName, JSON.stringify(res));
-  }
-  // const saveState = async (survey) => {
+  // function saveState(survey) {
   //   var res = { currentPageNo: survey.currentPageNo, data: survey.data };
-  //   const response = await axios.post("http://localhost:3001/api/results", res);
-  //   console.log(response);
-  // };
+  //   //Here should be the code to save the data into your database
+  //   // window.localStorage.setItem(storageName, JSON.stringify(res));
+  // }
+  const saveState = async (survey) => {
+    var res = { currentPageNo: survey.currentPageNo, data: survey.data };
+    const response = await axios.post("http://localhost:3001/api/results", res);
+    console.log(response);
+  };
 
   function clearStorage() {
     window.localStorage.removeItem(storageName);

@@ -1,4 +1,5 @@
 import React, { Component, useState, useCallback } from "react";
+import axios from "axios";
 
 import * as Survey from "survey-react";
 
@@ -27,6 +28,12 @@ function SurveyComponent() {
     //Here should be the code to save the data into your database
     window.localStorage.setItem(storageName, JSON.stringify(res));
   }
+  // const saveState = async (survey) => {
+  //   var res = { currentPageNo: survey.currentPageNo, data: survey.data };
+  //   const response = await axios.post("http://localhost:3001/api/results", res);
+  //   console.log(response);
+  // };
+
   function clearStorage() {
     window.localStorage.removeItem(storageName);
   }

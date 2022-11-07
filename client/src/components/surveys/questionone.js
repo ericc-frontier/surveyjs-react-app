@@ -37,46 +37,6 @@ const json = {
         },
         {
           type: "panel",
-          name: "panel",
-          elements: [
-            {
-              type: "text",
-              name: "socialsecurity",
-              title: "Social Security #:",
-              isRequired: true,
-              inputFormat: "999-99-9999",
-            },
-            {
-              type: "text",
-              inputType: "date",
-              isRequired: true,
-              name: "birthDate",
-              startWithNewLine: false,
-              title: "Date of birth:",
-            },
-            {
-              type: "radiogroup",
-              choices: [
-                {
-                  value: "male",
-                  text: "Male",
-                },
-                {
-                  value: "female",
-                  text: "Female",
-                },
-              ],
-              colCount: 0,
-              isRequired: true,
-              name: "sex",
-              title: "Sex:",
-            },
-          ],
-          questionTitleLocation: "left",
-          title: "Social Security & Birth Date",
-        },
-        {
-          type: "panel",
           name: "panel1",
           elements: [
             {
@@ -116,72 +76,9 @@ const json = {
         },
       ],
     },
-    // {
-    //   name: "page2",
-    //   title: "Demo Title for survey page 2",
-    //   elements: [
-    //     {
-    //       type: "rating",
-    //       name: "nps_score",
-    //       title:
-    //         "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague? (If product sat <=5 text box becomes visable",
-    //       isRequired: true,
-    //       rateMin: 0,
-    //       rateMax: 10,
-    //       minRateDescription: "(Most unlikely)",
-    //       maxRateDescription: "(Most likely)",
-    //     },
-    //     {
-    //       type: "comment",
-    //       name: "passive_experience",
-    //       visibleIf: "{satisfaction} < 5",
-    //       title: "What can we do to make this product more satisfying?",
-    //     },
-    //     {
-    //       type: "rating",
-    //       name: "satisfaction",
-    //       title: "How satisfied are you with the Product?",
-    //       minRateDescription: "Not Satisfied",
-    //       maxRateDescription: "Completely satisfied",
-    //     },
-    //     {
-    //       type: "checkbox",
-    //       name: "car",
-    //       title:
-    //         "Which is the brand of your car? (next questions renders if response is given)",
-    //       isRequired: true,
-    //       showNoneItem: true,
-    //       colCount: 4,
-    //       choices: [
-    //         "Ford",
-    //         "Volkswagen",
-    //         "Nissan",
-    //         "Audi",
-    //         "Mercedes-Benz",
-    //         "BMW",
-    //         "Toyota",
-    //       ],
-    //     },
-    //     {
-    //       type: "radiogroup",
-    //       name: "product_discovering",
-    //       title: "How did you first discover our product?",
-    //       choices: [
-    //         "Search engine",
-    //         "GitHub",
-    //         "Friend or colleague",
-    //         {
-    //           value: "Redit",
-    //           text: "Reddit",
-    //         },
-    //         "Twitter",
-    //         "Facebook",
-    //       ],
-    //     },
-    //   ],
-    // },
+
     {
-      name: "page3",
+      name: "page2",
       elements: [
         {
           type: "checkbox",
@@ -222,27 +119,6 @@ const json = {
             {
               value: "yes",
               text: "Yes",
-            },
-          ],
-          colCount: 0,
-        },
-        {
-          type: "radiogroup",
-          name: "sex",
-          title: "Sex:",
-          isRequired: true,
-          choices: [
-            {
-              value: "male",
-              text: "Male",
-            },
-            {
-              value: "female",
-              text: "Female",
-            },
-            {
-              value: "neither",
-              text: "Neither",
             },
           ],
           colCount: 0,
